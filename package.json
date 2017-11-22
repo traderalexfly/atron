@@ -1,0 +1,25 @@
+{
+  "name": "etron",
+  "version": "1.0.0",
+  "description": "eTron is a framework for working with the Eletron + Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inncode/etron.git"
+  },
+  "keywords": [
+    "etron",
+    "angular",
+    "electron",
+    "framework"
+  ],
+  "author": "Hiago Silva Souza <hsouza@inncode.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inncode/etron/issues"
+  },
+  "homepage": "https://github.com/inncode/etron#readme"
+}
