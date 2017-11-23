@@ -5,7 +5,7 @@ module.exports = function (app) {
     self.description = 'Start the new application.';
     
     self.bootstrap = function() {
-        console.log('oieee');
+        console.log('Start Works!');
     }
 
     return self;

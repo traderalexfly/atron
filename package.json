@@ -1,6 +1,6 @@
 {
   "name": "@etron/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "eTron is a framework for working with the Electron + Angular",
   "main": "app.js",
   "bin": {
