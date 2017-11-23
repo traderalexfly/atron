@@ -1,8 +1,11 @@
 {
-  "name": "etron",
+  "name": "@etron/cli",
   "version": "1.0.0",
-  "description": "eTron is a framework for working with the Eletron + Angular",
-  "main": "index.js",
+  "description": "eTron is a framework for working with the Electron + Angular",
+  "main": "app.js",
+  "bin": {
+    "etron": "./app.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +24,15 @@
   "bugs": {
     "url": "https://github.com/inncode/etron/issues"
   },
-  "homepage": "https://github.com/inncode/etron#readme"
+  "homepage": "https://github.com/inncode/etron#readme",
+  "dependencies": {
+    "@angular/cli": "^1.5.3",
+    "electron": "^1.7.9",
+    "chalk": "^2.1.0",
+    "clear": "0.0.1",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.11.0",
+    "figlet": "^1.2.0"
+  }
 }
