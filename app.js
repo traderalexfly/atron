@@ -1,22 +1,22 @@
 #!/usr/bin/env node
 var app = {
+  requestify: require('requestify'),
   chalk: require("chalk"),
   clear: require("clear"),
   figlet: require("figlet"),
   program: require("commander"),
   co: require("co"),
   fileutils: require("./utils/file.utils")(),
-  prompt: require("co-prompt")
+  prompt: require("co-prompt"),
+  package: require("./package.json")
 };
-
-var pjson = require("./package.json");
 
 app.clear();
 console.log(
   app.chalk.bold.redBright(
     app.figlet.textSync("eTron", { horizontalLayout: "full" })
   ),
-  app.chalk.bold.yellowBright(pjson.version)
+  app.chalk.bold.yellowBright(app.package.version)
 );
 
 var files = app.fileutils._getAllFilesFromFolder(__dirname + "/command/");
