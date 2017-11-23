@@ -11,12 +11,14 @@ var app = {
   package: require("./package.json")
 };
 
+app.program.name('etron');
+
 app.clear();
 console.log(
   app.chalk.bold.redBright(
     app.figlet.textSync("eTron", { horizontalLayout: "full" })
   ),
-  app.chalk.bold.yellowBright(app.package.version)
+  app.chalk.yellowBright(app.package.version)
 );
 
 var files = app.fileutils._getAllFilesFromFolder(__dirname + "/command/");
