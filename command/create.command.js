@@ -1,8 +1,8 @@
 module.exports = function (app) {
     self = this;
-    self.command = '-c';
-    self.flag  = '--create';
-    self.description = 'start the new application';
+    self.command = 'c';
+    self.flag  = 'create';
+    self.description = 'create the new application';
     
     self.bootstrap = function() {
 

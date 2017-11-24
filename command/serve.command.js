@@ -1,7 +1,7 @@
 module.exports = function (app) {
     self = this;
-    self.command = '-s';
-    self.flag  = '--serve';
+    self.command = 's';
+    self.flag  = 'serve';
     self.description = 'serve this application';
     
     self.bootstrap = function() {
