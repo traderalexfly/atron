@@ -24,11 +24,15 @@ module.exports = function (app) {
                     type: 'string',
                     required: true
                 }], function (error, response) {
-                    if(response.upgrade == 'Y') {
+                    if(response.upgrade.toLowerCase() === 'y') {
                         self.update(complete);
+                    } else {
+                        if(complete) {
+                            complete();
+                        }
                     }
                 });
-                
+
                 return;
             }
     
