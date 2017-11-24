@@ -38,13 +38,13 @@ module.exports = function (app) {
         app.git()
             .silent(true)
             .clone('https://github.com/inncode/etron-base-application.git', folder)
-            .then(() => app.alertutils.success("finished..."))
+            .then(() => app.alertutils.success("Finished..."))
             .catch((err) => {
                 
                 if (app.fs.existsSync(folder))
                     app.fs.rmdirSync(folder);
 
-                app.alertutils.error('failed: ' + err);
+                app.alertutils.error('Failed: ' + err);
             });
     }
 
