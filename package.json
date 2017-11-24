@@ -1,6 +1,6 @@
 {
   "name": "@etron/cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "eTron is a framework for working with the Electron + Angular",
   "main": "app.js",
   "bin": {
@@ -29,12 +29,13 @@
     "@angular/cli": "^1.5.3",
     "chalk": "^2.1.0",
     "clear": "0.0.1",
-    "co": "^4.6.0",
-    "co-prompt": "^1.0.0",
     "commander": "^2.11.0",
     "electron": "^1.7.9",
     "figlet": "^1.2.0",
-    "requestify": "^0.2.5"
+    "fs": "0.0.1-security",
+    "prompt": "^1.0.0",
+    "requestify": "^0.2.5",
+    "simple-git": "^1.82.0"
   },
   "devDependencies": {}
 }

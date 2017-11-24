@@ -1,15 +1,18 @@
 #!/usr/bin/env node
+
 var app = {
-  requestify: require('requestify'),
-  chalk: require("chalk"),
-  clear: require("clear"),
-  figlet: require("figlet"),
-  program: require("commander"),
-  co: require("co"),
-  fileutils: require("./utils/file.utils")(),
-  prompt: require("co-prompt"),
-  package: require("./package.json")
+  requestify  : require('requestify'),
+  fs          : require('fs'),
+  chalk       : require("chalk"),
+  clear       : require("clear"),
+  figlet      : require("figlet"),
+  git         : require("simple-git/promise"),
+  program     : require("commander"),
+  prompt      : require("prompt"),
+  fileutils   : require("./utils/file.utils")(),
+  package     : require("./package.json")
 };
+app.alertutils = require("./utils/alert.utils")(app),
 
 app.program.name('etron');
 
