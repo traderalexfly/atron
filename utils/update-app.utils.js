@@ -45,11 +45,14 @@ module.exports = function (app) {
     self.update = function (complete) {
         app.alertutils.success('Starting update @etron/cli...');
         app.exec('npm install -g @etron/cli', function(error, stdout, stderr) {
-            app.alertutils.error('stdout: ' + stdout);
-            app.alertutils.error('stderr: ' + stderr);
+            
             if (error !== null) {
+                app.alertutils.error('stdout: ' + stdout);
+                app.alertutils.error('stderr: ' + stderr);
                 app.alertutils.error('exec error: ' + error);
             } else {
+                app.alertutils.success('stdout: ' + stdout);
+                app.alertutils.warning('stderr: ' + stderr);
                 app.alertutils.success('@etron/cli updated! =)');
             }
 
