@@ -13,8 +13,8 @@ module.exports = function (app) {
             
             console.log('\n ');
 
-            if(process.argv[4]) {
-                self.createApp(process.argv[4]);
+            if(process.argv[3]) {
+                self.createApp(process.argv[3]);
             } else {
 
                 app.prompt.start();
