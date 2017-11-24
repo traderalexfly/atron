@@ -6,31 +6,32 @@ module.exports = function (app) {
     
     self.bootstrap = function() {
 
-        console.log('\n ');
-        
-        app.prompt.start();
-
-        app.prompt.get([{
-            name: 'project_name',
-            description: 'Project name',
-            type: 'string',
-            required: true
-        }], function (error, result) {
+        app.updateapputils.checkVersion(() => {
             
-            var name = result.project_name;
-            var formated_name = name.toLocaleLowerCase().split(' ').join('-');
+            console.log('\n ');
+            app.prompt.start();
 
-            if (!app.fs.existsSync(formated_name)){
-                app.alertutils.success("Creating folder " + formated_name + "...");                
-                app.fs.mkdirSync(formated_name);
+            app.prompt.get([{
+                name: 'project_name',
+                description: 'Project name',
+                type: 'string',
+                required: true
+            }], function (error, result) {
+                
+                var name = result.project_name;
+                var formated_name = name.toLocaleLowerCase().split(' ').join('-');
 
-                self.cloneStartApplication(formated_name);
-            } else {
-                app.alertutils.error("Folder " + formated_name + ", exists!");
-            }
+                if (!app.fs.existsSync(formated_name)){
+                    app.alertutils.success("Creating folder " + formated_name + "...");                
+                    app.fs.mkdirSync(formated_name);
 
+                    self.cloneStartApplication(formated_name);
+                } else {
+                    app.alertutils.error("Folder " + formated_name + ", exists!");
+                }
+
+            });
         });
-
     }
 
     self.cloneStartApplication = function (folder) {

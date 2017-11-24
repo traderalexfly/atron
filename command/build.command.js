@@ -5,7 +5,9 @@ module.exports = function (app) {
     self.description = 'Build this application.';
     
     self.bootstrap = function() {
-        console.log('Build Works!');
+        app.updateapputils.checkVersion(() => {
+            console.log('build is not implemented =(');
+        });
     }
 
     return self;

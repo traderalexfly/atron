@@ -3,6 +3,7 @@
 var app = {
   requestify  : require('requestify'),
   fs          : require('fs'),
+  exec        : require('child_process').exec,
   chalk       : require("chalk"),
   clear       : require("clear"),
   figlet      : require("figlet"),
@@ -13,8 +14,9 @@ var app = {
   package     : require("./package.json")
 };
 app.alertutils = require("./utils/alert.utils")(app),
+app.updateapputils = require("./utils/update-app.utils")(app),
 
-app.program.name('etron');
+app.program.name('etron').version(app.package.version);
 
 app.clear();
 console.log(
