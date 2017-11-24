@@ -2,6 +2,10 @@ module.exports = function (app) {
     
     var self = this;
 
+    /**
+     * Check current version in github
+     * @param {*} complete 
+     */
     self.checkVersion = function (complete) {
         app.requestify.get('https://raw.githubusercontent.com/inncode/etron/master/package.json')
         .then(function(response) {
@@ -42,6 +46,10 @@ module.exports = function (app) {
         });
     };
 
+    /**
+     * Start de application update
+     * @param {*} complete 
+     */
     self.update = function (complete) {
         app.alertutils.success('Starting update @etron/cli...');
         app.exec('npm install -g @etron/cli', function(error, stdout, stderr) {

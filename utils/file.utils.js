@@ -1,6 +1,9 @@
 module.exports = function () {
     var self = this;
     
+    /**
+     * get all files from folder.
+     */
     self._getAllFilesFromFolder = function(dir) {
     
         var filesystem = require("fs");

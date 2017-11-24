@@ -18,6 +18,7 @@ app.updateapputils = require("./utils/update-app.utils")(app),
 
 app.program.name('etron').version(app.package.version);
 
+// Show the name and version for etron.
 app.clear();
 console.log(
   app.chalk.bold.redBright(
@@ -28,6 +29,9 @@ console.log(
 
 var files = app.fileutils._getAllFilesFromFolder(__dirname + "/command/");
 
+/**
+ * populate options for program
+ */
 for (let i = 0; i < files.length; i++) {
   try {
     var memCo = require(files[i])(app);
@@ -37,9 +41,10 @@ for (let i = 0; i < files.length; i++) {
   }
 }
 
+// parse - argv
 app.program.parse(process.argv);
 
-//bootstrap do comando.
+//bootstrap for command
 for (let i = 0; i < files.length; i++) {
   var memCo = require(files[i])(app);
   let fu = eval("app.program." + memCo.flag.replace("--", ""));
@@ -49,7 +54,7 @@ for (let i = 0; i < files.length; i++) {
   }
 }
 
-//caso não digite nenhum opção eu mostro o helper
+//case not say command, show the options
 if (!app.program.args.length) {
   app.program.help();
 }
